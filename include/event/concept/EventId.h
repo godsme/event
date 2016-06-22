@@ -11,8 +11,14 @@
 #ifndef EVENTID_H_
 #define EVENTID_H_
 
+#include <event/event.h>
+
+EV_NS_BEGIN
+
 typedef unsigned short EventId;
 
 const EventId INVALID_EVENT_ID = 0xFFFF;
+
+EV_NS_END
 
 #endif /* EVENTID_H_ */

@@ -11,17 +11,21 @@
 #ifndef BASEEVENTINFO_H_
 #define BASEEVENTINFO_H_
 
-#include "event/concept/EventInfo.h"
+#include <event/concept/EventInfo.h>
+
+EV_NS_BEGIN
 
 struct BaseEventInfo : EventInfo
 {
    explicit BaseEventInfo(const EventId eventId);
 
    OVERRIDE(EventId getEventId() const);
-   OVERRIDE(Status updateEventId(const EventId id) const);
+   OVERRIDE(cub::Status updateEventId(const EventId id) const);
 
 private:
    mutable EventId      eventId;
 };
+
+EV_NS_END
 
 #endif /* BASEEVENTINFO_H_ */

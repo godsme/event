@@ -11,17 +11,23 @@
 #ifndef EVENTINFO_H_
 #define EVENTINFO_H_
 
-#include <base/dci/Role.h>
-#include "event/concept/EventId.h"
-#include <base/Status.h>
+#include <event/concept/EventId.h>
+
+#include <cub/dci/Role.h>
+#include <cub/base/Status.h>
+
 #include <cstddef>
+
+EV_NS_BEGIN
 
 DEFINE_ROLE(EventInfo)
 {
    ABSTRACT(EventId getEventId() const);
    ABSTRACT(const void* getMsg() const);
    ABSTRACT(size_t getMsgSize() const);
-   ABSTRACT(Status updateEventId(const EventId) const);
+   ABSTRACT(cub::Status updateEventId(const EventId) const);
 };
+
+EV_NS_END
 
 #endif /* EVENTINFO_H_ */

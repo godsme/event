@@ -11,9 +11,12 @@
 #ifndef EVENT_H_
 #define EVENT_H_
 
-#include "event/concept/EventId.h"
-#include <base/Status.h>
+#include <event/concept/EventId.h>
+#include <cub/base/Status.h>
+
 #include <cstddef>
+
+EV_NS_BEGIN
 
 struct EventInfo;
 
@@ -28,7 +31,7 @@ struct Event
 
    bool matches(const EventId eventId) const;
 
-   Status updateEventId(const EventId) const;
+   cub::Status updateEventId(const EventId) const;
    void assignEventInfoTo(Event&) const;
 
    void consume() const;
@@ -38,5 +41,7 @@ private:
    const EventInfo* info;
    mutable bool consumed;
 };
+
+EV_NS_END
 
 #endif /* EVENT_H_ */

@@ -11,15 +11,18 @@
 #ifndef SIMPLEEVENTINFO_H_
 #define SIMPLEEVENTINFO_H_
 
-#include "event/impl/BaseEventInfo.h"
+#include <event/impl/BaseEventInfo.h>
+
+EV_NS_BEGIN
 
 struct SimpleEventInfo : BaseEventInfo
 {
    explicit SimpleEventInfo(const EventId eventId);
 
    OVERRIDE(const void* getMsg() const);
-//   OVERRIDE(const void* getMsgBuffer() const);
    OVERRIDE(size_t getMsgSize() const);
 };
+
+EV_NS_END
 
 #endif /* SIMPLEEVENTINFO_H_ */

@@ -11,7 +11,9 @@
 #ifndef SCATTEREDEVENTINFO_H_
 #define SCATTEREDEVENTINFO_H_
 
-#include "event/impl/BaseEventInfo.h"
+#include <event/impl/BaseEventInfo.h>
+
+EV_NS_BEGIN
 
 struct ScatteredEventInfo : BaseEventInfo
 {
@@ -19,10 +21,12 @@ struct ScatteredEventInfo : BaseEventInfo
 
    OVERRIDE(const void* getMsg() const);
    OVERRIDE(const void* getMsgBuffer() const);
-   OVERRIDE(WORD16 getMsgSize() const);
+   OVERRIDE(size_t getMsgSize() const);
 
 private:
    const void* const  msg;
 };
+
+EV_NS_END
 
 #endif /* SCATTEREDEVENTINFO_H_ */

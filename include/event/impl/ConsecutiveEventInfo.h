@@ -11,7 +11,11 @@
 #ifndef CONSECUTIVEEVENTINFO_H_
 #define CONSECUTIVEEVENTINFO_H_
 
-#include "event/impl/BaseEventInfo.h"
+#include <event/impl/BaseEventInfo.h>
+
+#include <cstddef>
+
+EV_NS_BEGIN
 
 struct ConsecutiveEventInfo : BaseEventInfo
 {
@@ -20,15 +24,16 @@ struct ConsecutiveEventInfo : BaseEventInfo
       : BaseEventInfo(eventId), msg((void*)&msg), size(sizeof(msg))
    {}
 
-   ConsecutiveEventInfo(const EventId eventId, const void* const msg, WORD16 size);
+   ConsecutiveEventInfo(const EventId eventId, const void* const msg, size_t size);
 
    OVERRIDE(const void* getMsg() const);
-//   OVERRIDE(const void* getMsgBuffer() const);
    OVERRIDE(size_t getMsgSize() const);
 
 private:
    const void* const  msg;
    const size_t       size;
 };
+
+EV_NS_END
 
 #endif /* CONSECUTIVEEVENTINFO_H_ */
