@@ -1,1 +1,0 @@
-/Users/darwin/project/cpp/event/build/src/CMakeFiles/event.dir
