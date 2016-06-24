@@ -25,12 +25,6 @@ const void* ScatteredEventInfo::getMsg() const
 }
 
 ///////////////////////////////////////////////////////////////
-const void* ScatteredEventInfo::getMsgBuffer() const
-{
-   return 0;
-}
-
-///////////////////////////////////////////////////////////////
 size_t ScatteredEventInfo::getMsgSize() const
 {
    return INVALID_MSG_SIZE;

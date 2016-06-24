@@ -20,7 +20,6 @@ struct ScatteredEventInfo : BaseEventInfo
    ScatteredEventInfo(const EventId eventId, const void* const msg);
 
    OVERRIDE(const void* getMsg() const);
-   OVERRIDE(const void* getMsgBuffer() const);
    OVERRIDE(size_t getMsgSize() const);
 
 private:
