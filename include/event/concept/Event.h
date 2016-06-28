@@ -33,6 +33,10 @@ struct Event
 
    cub::Status updateEventId(const EventId) const;
    void assignEventInfoTo(Event&) const;
+   const EventInfo& getEventInfo() const
+   {
+       return *info;
+   }
 
    void consume() const;
    bool isConsumed() const;
