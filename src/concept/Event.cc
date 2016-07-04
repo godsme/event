@@ -24,17 +24,17 @@ namespace
          return INVALID_EVENT_ID;
       }
 
-      const void* getMsg() const
+      OVERRIDE(const void* getMsg() const)
       {
          return 0;
       }
 
-      size_t getMsgSize() const
+      OVERRIDE(size_t getMsgSize() const)
       {
          return INVALID_MSG_SIZE;
       }
 
-      cub::Status updateEventId(const EventId) const
+      OVERRIDE(cub::Status updateEventId(const EventId) const)
       {
          return CUB_FATAL_BUG;
       }
